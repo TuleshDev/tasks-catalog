@@ -1,11 +1,10 @@
-Сервер
+## Сервер
 
 Сервер запускается командой:
 
 ./gradlew bootRun
 
-
-Клиент
+## Клиент
 
 Для порядка создал главную страницу. Для вывода, в браузере надо ввести:
 
@@ -15,14 +14,11 @@ http://localhost:8080/
 
 http://localhost:8080/api/tasks?page=0&size=10
 
-
-
-Тесты проекта
+## Тесты проекта
 
 В папке src/test/kotlin/ru/arendago находятся тесты.
 
-
-TaskServiceTest.kt
+### TaskServiceTest.kt
 
 Проверяет работу сервисного слоя:
 · создание задачи
@@ -34,7 +30,7 @@ TaskServiceTest.kt
 Все тесты написаны реактивно через StepVerifier.
 
 
-TaskControllerTest.kt
+### TaskControllerTest.kt
 
 Проверяет работу контроллера:
 · создание задачи (201 Created)
@@ -43,7 +39,7 @@ TaskControllerTest.kt
 Используется WebTestClient и StepVerifier.
 
 
-TaskRepositoryTest.kt
+### TaskRepositoryTest.kt
 
 Юнит‑тесты для репозитория:
 · проверка SQL для поиска по id
@@ -52,14 +48,20 @@ TaskRepositoryTest.kt
 JdbcClient замокан.
 
 
-TaskRepositoryPaginationTest.kt
+### TaskRepositoryPaginationTest.kt
 
 Отдельный тест на пагинацию:
 · проверка, что при size=2 и offset=0 возвращаются две задачи
 · проверка SQL и параметров
 
+### TaskRepositoryUpdateStatusTest.kt
 
-Запуск тестов
+Отдельный тест на обновление статуса:
+· проверка, что метод формирует корректный SQL
+· проверка передачи параметров (status, updatedAt, id)
+· проверка вызова updateStatus() и возвращаемого результата
+
+### Запуск тестов
 
 Все тесты запускаются командой:
 
