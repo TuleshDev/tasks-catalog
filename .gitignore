@@ -1,0 +1,27 @@
+# Gradle build output
+/build/
+.gradle/
+
+# IntelliJ IDEA project files
+.idea/
+*.iml
+out/
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Java compiled classes
+*.class
+
+# JAR/WAR/EAR files (собираются автоматически, хранить не нужно)
+*.jar
+*.war
+*.ear
+
+# Temporary files
+*.tmp
+*.swp
